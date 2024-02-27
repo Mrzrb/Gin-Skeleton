@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -11,10 +10,6 @@ import (
 func LoadConf(filename string, s interface{}) {
 	var path string
 	path = filepath.Join("config", filename)
-	yamlFile, _ := os.ReadFile(path)
-	fmt.Println(string(yamlFile))
-	yaml.Unmarshal(yamlFile, s)
-	fmt.Println(s)
 
 	if yamlFile, err := os.ReadFile(path); err != nil {
 		panic(filename + " get error: " + err.Error())

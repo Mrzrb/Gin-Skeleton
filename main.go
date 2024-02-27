@@ -10,6 +10,6 @@ import (
 func main() {
 	config.InitConf("dev")
 	engine := gin.New()
-	helpers.Init()
+	helpers.Init(engine)
 	helpers.HttpServer(engine)
 }

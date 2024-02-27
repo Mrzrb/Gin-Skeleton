@@ -1,2 +1,17 @@
 server:
   addr: ":8000"
+
+mysql:
+  base:
+    service: base
+    database: base
+    #addr: "cetus-mall-svc.mysql:3306"
+    addr: ""
+    user: ""
+    password: ""
+    maxidleconns: 50
+    maxopenconns: 100
+    connMaxLifeTime: 3600s
+    connTimeOut: 1500ms
+    writeTimeOut: 3s
+    readTimeOut: 3s
