@@ -5,11 +5,12 @@
 package wires
 
 import (
+	"app/app/controller"
 	"app/infra"
 
 	"github.com/google/wire"
 )
 
 func InitApp() (*infra.App, error) {
-	panic(wire.Build(infra.NewApp))
+	panic(wire.Build(infra.NewApp, controller.Provider))
 }

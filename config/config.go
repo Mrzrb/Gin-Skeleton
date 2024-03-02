@@ -1,10 +1,8 @@
 package config
 
-import "app/infra"
-
 type Config struct {
 	Server Server
-	Mysql  map[string]infra.MysqlConf
+	Mysql  map[string]MysqlConf
 }
 type Server struct {
 	Addr string `yaml:"addr"`

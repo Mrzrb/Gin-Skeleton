@@ -12,7 +12,7 @@ func HttpServer(engine *gin.Engine) {
 	// // MQ 消费回调路由
 	// router.MQ(engine)
 	// app内定时任务
-	//router.Tasks(engine)
+	// router.Tasks(engine)
 
 	// 启动web server
 	engine.Run(config.Conf.Server.Addr)
