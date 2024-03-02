@@ -4,11 +4,11 @@ server:
 mysql:
   base:
     service: base
-    database: base
+    database: mall_goods
     #addr: "cetus-mall-svc.mysql:3306"
-    addr: ""
-    user: ""
-    password: ""
+    addr: "10.112.37.50:6060"
+    user: "homework"
+    password: "homework"
     maxidleconns: 50
     maxopenconns: 100
     connMaxLifeTime: 3600s

@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var MysqlClients map[string]*gorm.DB
+var MysqlClients = map[string]*gorm.DB{}
 
 func InitMysql() {
 	for k, mc := range config.Conf.Mysql {
