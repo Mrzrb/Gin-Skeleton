@@ -9,6 +9,10 @@ import (
 
 var MysqlClients = map[string]*gorm.DB{}
 
+const (
+	CommonMysqlClient = "common"
+)
+
 func InitMysql() {
 	for k, mc := range config.Conf.Mysql {
 		client, err := infra.InitMysqlClient(mc)
