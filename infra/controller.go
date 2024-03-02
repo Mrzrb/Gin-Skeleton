@@ -1,4 +1,4 @@
-package controller
+package infra
 
 type Controller interface {
 	Routes()
