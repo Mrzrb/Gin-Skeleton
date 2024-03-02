@@ -11,7 +11,6 @@ import (
 func applyModel() []any {
 	m := []any{
 		schemas.Test{},
-		schemas.Demo{},
 	}
 	return m
 }
