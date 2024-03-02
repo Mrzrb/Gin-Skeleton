@@ -1,6 +1,7 @@
 package infra
 
+import "github.com/gin-gonic/gin"
+
 type Controller interface {
-	Routes()
-	Middlewares()
+	Routes(engine *gin.Engine)
 }

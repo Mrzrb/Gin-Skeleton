@@ -1,11 +1,11 @@
 package infra
 
 type App struct {
-	BaseController Controller
+	Ctls []Controller
 }
 
 func NewApp(baseCtl Controller) *App {
 	return &App{
-		BaseController: baseCtl,
+		Ctls: []Controller{baseCtl},
 	}
 }
