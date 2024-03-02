@@ -1,2 +1,2 @@
 generate:
-	@go run cmd/generate/main.go
+	@go run cmd/gorm/generate.go
