@@ -1,7 +1,8 @@
 package main
 
 import (
-	"app/app/model/schema"
+	"app/app/model/repo"
+	"app/app/model/schemas"
 	"app/helpers"
 
 	"gorm.io/gen"
@@ -9,12 +10,13 @@ import (
 
 func applyModel() []any {
 	m := []any{
-		schema.Test{},
+		schemas.Test{},
 	}
 	return m
 }
 
 func applyInterface(g *gen.Generator) {
+	g.ApplyInterface(func(repo.ITest) {}, schemas.Test{})
 }
 
 func main() {
