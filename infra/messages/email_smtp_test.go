@@ -16,7 +16,7 @@ const (
 func TestSendSmtpEmail(t *testing.T) {
 	client := NewSmtpEmail(EmailServer, EmailName, EmailPassPop3, EmailPort)
 	convey.Convey("Send basic email test", t, func() {
-		m := NewEmail(client.FromName, "test send email", "This is a test email from go skeleton", []string{"mrzhangrb@outlook.com"})
+		m := NewEmail(client.FromName, "test send email", "<h1>This</h1> is a test email from go skeleton", []string{"mrzhangrb@outlook.com"})
 		err := client.Send(m)
 		convey.So(err, convey.ShouldBeNil)
 	})
