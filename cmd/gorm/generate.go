@@ -1,8 +1,7 @@
 package main
 
 import (
-	"app/app/model/repo"
-	"app/app/model/schemas"
+	"app/app/model/dao"
 	"app/helpers"
 
 	"gorm.io/gen"
@@ -10,13 +9,13 @@ import (
 
 func applyModel() []any {
 	m := []any{
-		schemas.Test{},
+		dao.Demo{},
 	}
 	return m
 }
 
 func applyInterface(g *gen.Generator) {
-	g.ApplyInterface(func(repo.ITest) {}, schemas.Test{})
+	// g.ApplyInterface(func(repo.ITest) {}, schemas.Test{})
 }
 
 func main() {
@@ -27,7 +26,7 @@ func main() {
 
 func generate() {
 	g := gen.NewGenerator(gen.Config{
-		OutPath: "./app/model/dao/",
+		OutPath: "./app/model/query/",
 		Mode:    gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface, // generate mode
 	})
 
