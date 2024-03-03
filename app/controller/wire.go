@@ -7,5 +7,5 @@ import (
 )
 
 var Provider = wire.NewSet(
-	NewBaseCtl, wire.Bind(new(infra.Controller), new(*BaseCtl)),
+	wire.Struct(new(BaseCtl), "*"), wire.Bind(new(infra.Controller), new(*BaseCtl)),
 )

@@ -9,12 +9,16 @@ package wires
 import (
 	"app/app/controller"
 	"app/infra"
+	"app/infra/messages"
 )
 
 // Injectors from wire.go:
 
 func InitApp() (*infra.App, error) {
-	baseCtl := controller.NewBaseCtl()
+	smtpEmail := messages.NewSmtpEmailNoreply()
+	baseCtl := &controller.BaseCtl{
+		EmailSrv: smtpEmail,
+	}
 	app := infra.NewApp(baseCtl)
 	return app, nil
 }

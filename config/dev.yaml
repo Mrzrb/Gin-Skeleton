@@ -5,6 +5,7 @@ mysql:
   base:
     service: common
     database: ad
+
     #addr: "cetus-mall-svc.mysql:3306"
     addr: "localhost:3306"
     user: "root"
@@ -15,3 +16,8 @@ mysql:
     connTimeOut: 1500ms
     writeTimeOut: 3s
     readTimeOut: 3s
+emailNoreply:
+  emailServer: "smtp.163.com"
+  emailUser: "go_skeleton@163.com"
+  emailPassword: "MFZNIPMCGVLAVUUE"
+  emailPort: 25

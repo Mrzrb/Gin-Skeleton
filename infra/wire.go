@@ -1,5 +1,15 @@
 package infra
 
-import "github.com/google/wire"
+import (
+	"app/infra/messages"
 
-var Provider = wire.NewSet(NewCommonDB)
+	"github.com/google/wire"
+)
+
+var Provider = wire.NewSet(
+	NewCommonDB,
+	wire.NewSet(
+		messages.NewSmtpEmailNoreply,
+		wire.Bind(new(messages.EmailProvider), new(*messages.SmtpEmail)),
+	),
+)

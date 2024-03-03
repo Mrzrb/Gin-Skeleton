@@ -6,9 +6,9 @@ type EmailProvider interface {
 
 type Email struct {
 	From    string
-	To      []string
 	Subject string
 	Body    string
+	To      []string
 }
 
 func NewEmail(from, subject, body string, to []string) Email {

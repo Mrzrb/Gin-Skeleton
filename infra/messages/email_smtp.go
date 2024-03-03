@@ -1,6 +1,7 @@
 package messages
 
 import (
+	"app/config"
 	"net/smtp"
 	"strconv"
 )
@@ -19,6 +20,11 @@ func NewSmtpEmail(smtpServer, fromName, password string, smtpPort int) *SmtpEmai
 		Password:   password,
 		SMTPPort:   smtpPort,
 	}
+}
+
+func NewSmtpEmailNoreply() *SmtpEmail {
+	cfg := config.Conf.EmailNoreply
+	return NewSmtpEmail(cfg.EmailServer, cfg.EmailUser, cfg.EmailPassword, cfg.EmailPort)
 }
 
 // Send implements EmailProvider.

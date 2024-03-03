@@ -12,5 +12,5 @@ import (
 )
 
 func InitApp() (*infra.App, error) {
-	panic(wire.Build(infra.NewApp, controller.Provider))
+	panic(wire.Build(infra.NewApp, controller.Provider, infra.Provider))
 }
