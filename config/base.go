@@ -8,8 +8,7 @@ import (
 )
 
 func LoadConf(filename string, s interface{}) {
-	var path string
-	path = filepath.Join("config", filename)
+	path := filepath.Join("config", filename)
 
 	if yamlFile, err := os.ReadFile(path); err != nil {
 		panic(filename + " get error: " + err.Error())
