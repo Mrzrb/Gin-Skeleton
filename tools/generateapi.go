@@ -40,7 +40,7 @@ func getGen(engine *gin.Engine) *astra.Service {
 				// Because we know explicitly that the first argument is the context, we can ignore it
 				// We only need to concern ourselves with the status code, which is a unique case
 				// We can also ignore the error, as it will be parsed as a string
-				return contextFuncBuilder.Ignored().StatusCode().ExpressionResult().Build(func(route *astra.Route, params []any) (*astra.Route, error) {
+				return contextFuncBuilder.Ignored().ExpressionResult().Build(func(route *astra.Route, params []any) (*astra.Route, error) {
 					// Params is a list of the arguments returned from the function
 					// [0] is ignored
 					// [1] is the status code (int)
@@ -66,7 +66,7 @@ func getGen(engine *gin.Engine) *astra.Service {
 				// Because we know explicitly that the first argument is the context, we can ignore it
 				// We only need to concern ourselves with the status code, which is a unique case
 				// We can also ignore the error, as it will be parsed as a string
-				return contextFuncBuilder.Ignored().StatusCode().ExpressionResult().Build(func(route *astra.Route, params []any) (*astra.Route, error) {
+				return contextFuncBuilder.Ignored().ExpressionResult().Build(func(route *astra.Route, params []any) (*astra.Route, error) {
 					// Params is a list of the arguments returned from the function
 					// [0] is ignored
 					// [1] is the status code (int)

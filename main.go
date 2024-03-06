@@ -4,6 +4,7 @@ import (
 	"app/config"
 	"app/helpers"
 	"app/infra"
+	"app/tools"
 	"app/wires"
 
 	"github.com/gin-gonic/gin"
@@ -18,7 +19,7 @@ func main() {
 		panic(err)
 	}
 	setUpRouter(engine, app)
-	// tools.GenerateDoc(engine)
+	tools.GenerateDoc(engine)
 	helpers.HttpServer(engine)
 }
 

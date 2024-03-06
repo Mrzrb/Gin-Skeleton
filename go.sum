@@ -1,6 +1,6 @@
 github.com/Jeffail/gabs/v2 v2.7.0 h1:Y2edYaTcE8ZpRsR2AtmPu5xQdFDIthFG0jYhu5PY8kg=
-github.com/Mrzrb/astra v1.23.3 h1:2ZEGx0tn9ep/1YmPMXWfiTswPDq0iob3EczDNayGByI=
-github.com/Mrzrb/astra v1.23.3/go.mod h1:IwaBD+GCkgXU/Vj5E7d5P+DJMxJ0FXl6X4VN4Bp+tQA=
+github.com/Mrzrb/astra v1.23.5 h1:zm6sil8H4SGa8vC3UJ4YBAG+/ssa4Hi5n8igT3Jkr2A=
+github.com/Mrzrb/astra v1.23.5/go.mod h1:IwaBD+GCkgXU/Vj5E7d5P+DJMxJ0FXl6X4VN4Bp+tQA=
 github.com/bytedance/sonic v1.5.0/go.mod h1:ED5hyg4y6t3/9Ku1R6dU/4KyJ48DZ4jPhfY1O2AihPM=
 github.com/bytedance/sonic v1.10.0-rc/go.mod h1:ElCzW+ufi8qKqNW0FY314xriJhyJhuoJ3gFZdAHF7NM=
 github.com/bytedance/sonic v1.10.1 h1:7a1wuFXL1cMy7a3f7/VFcEtriuXQnUBhtoVfOZiaysc=
