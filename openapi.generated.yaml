@@ -7,7 +7,8 @@ info:
         name: ""
     version: 1.0.0
 servers:
-    - url: http://localhost:9000
+    - url: http://localhost:8000
 paths:
-    /base:
-        post: {}
+    /demo:
+        post:
+            operationId: test

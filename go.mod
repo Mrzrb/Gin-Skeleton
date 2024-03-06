@@ -2,6 +2,10 @@ module app
 
 go 1.19
 
+replace (
+	// github.com/Mrzrb/astra v1.23.3 => /Users/zhangruobin/tmp/astralocal
+)
+
 require (
 	github.com/Mrzrb/astra v1.23.3
 	github.com/gin-gonic/gin v1.9.1
