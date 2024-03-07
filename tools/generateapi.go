@@ -14,7 +14,7 @@ func GenerateDoc(engine *gin.Engine) error {
 		Title:   "Example API",
 		Version: "1.0.0",
 		Host:    "localhost",
-		Port:    8000,
+		Port:    8080,
 	}
 	gen.SetConfig(&config)
 	err := gen.Parse()
