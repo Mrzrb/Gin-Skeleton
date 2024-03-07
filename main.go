@@ -7,6 +7,7 @@ import (
 	"app/tools"
 	"app/wires"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -24,6 +25,7 @@ func main() {
 }
 
 func setUpRouter(engine *gin.Engine, app *infra.App) error {
+	engine.Use(cors.Default())
 	for _, c := range app.Ctls {
 		c.Routes(engine)
 	}
