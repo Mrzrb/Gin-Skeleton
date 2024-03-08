@@ -5,7 +5,6 @@ import (
 	"app/infra/messages"
 	"app/tools"
 	"errors"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -32,13 +31,12 @@ type Resp struct {
 	UName    []string
 	Hit      int
 	WriteHit int
+	Rec      *Resp
 }
 
-func (d *BaseCtl) Test(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, Resp{})
-}
-
-func (d *BaseCtl) Hellp(ctx *gin.Context) {
+// 生成unsafe rust代码
+// go run github.com/owenthereal/unsafe go2rust -i app/controller/base.go -o app/controller/base.rs
+func (d *BaseCtl) GetUserInfo(ctx *gin.Context) {
 	var req Demo
 	if err := ctx.ShouldBindJSON(&req); err != nil {
 		tools.RenderJsonFail(ctx, errors.New("test"))
@@ -49,7 +47,7 @@ func (d *BaseCtl) Hellp(ctx *gin.Context) {
 
 // Routes implements infra.Controller.
 func (b *BaseCtl) Routes(engine *gin.Engine) {
-	engine.POST("/test", b.Hellp)
+	engine.POST("/getUserInfo", b.GetUserInfo)
 }
 
 var _ infra.Controller = (*BaseCtl)(nil)
