@@ -5,7 +5,6 @@ mysql:
   base:
     service: common
     database: user_center
-
     #addr: "cetus-mall-svc.mysql:3306"
     addr: "localhost:3306"
     user: "root"

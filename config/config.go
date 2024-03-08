@@ -1,9 +1,5 @@
 package config
 
-import (
-	"fmt"
-)
-
 type Config struct {
 	Server       Server
 	Mysql        map[string]MysqlConf
@@ -24,5 +20,4 @@ var Conf Config
 
 func InitConf(env string) {
 	LoadConf(env+".yaml", &Conf)
-	fmt.Printf("%+v", Conf)
 }
