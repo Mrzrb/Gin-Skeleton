@@ -11,7 +11,7 @@ import (
 var MysqlClients = map[string]*gorm.DB{}
 
 const (
-	CommonMysqlClient = "common"
+	CommonMysqlClient = "base"
 )
 
 func InitMysql() {
@@ -27,7 +27,7 @@ func InitMysql() {
 func initMysqlClientt(conf config.MysqlConf) (client *gorm.DB, err error) {
 	conf.CheckConf()
 
-	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?timeout=%s&readTimeout=%s&writeTimeout=%s&parseTime=True&loc=Asia%%2FShanghai&interpolateParams=%s",
+	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?timeout=%s&readTimeout=%s&writeTimeout=%s&parseTime=True&loc=Local&interpolateParams=%s",
 		conf.User,
 		conf.Password,
 		conf.Addr,

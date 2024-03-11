@@ -2,15 +2,18 @@ module app
 
 go 1.19
 
-//replace github.com/Mrzrb/astra v1.23.4 => /Users/zhangruobin/tmp/astralocal
+// replace github.com/Mrzrb/astra => /Users/zhangruobin/tmp/astra
 
 require (
-	github.com/Mrzrb/astra v1.23.8
+	github.com/Mrzrb/astra v1.23.9
 	github.com/gin-contrib/cors v1.6.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/google/wire v0.6.0
+	github.com/redis/rueidis v1.0.31
+	github.com/redis/rueidis/rueidiscompat v1.0.31
 	github.com/smartystreets/goconvey v1.8.1
 	github.com/stretchr/testify v1.9.0
+	golang.org/x/crypto v0.21.0
 	gopkg.in/yaml.v2 v2.4.0
 	gorm.io/driver/mysql v1.5.4
 	gorm.io/gen v0.3.25
@@ -37,7 +40,6 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
 	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
-	github.com/kr/text v0.2.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -51,7 +53,6 @@ require (
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	golang.org/x/arch v0.7.0 // indirect
-	golang.org/x/crypto v0.21.0 // indirect
 	golang.org/x/mod v0.16.0 // indirect
 	golang.org/x/net v0.22.0 // indirect
 	golang.org/x/sys v0.18.0 // indirect

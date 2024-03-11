@@ -33,6 +33,23 @@ paths:
                         text/plain:
                             schema:
                                 type: string
+    /user/email/send-verification-code:
+        post:
+            operationId: emailSendVerificationCode
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/user.EmailSendVerificationCodeReq'
+            responses:
+                "200":
+                    description: ""
+                "400":
+                    description: ""
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
 components:
     schemas:
         controller.Demo:
@@ -80,3 +97,8 @@ components:
                 WriteHit:
                     type: integer
                     format: int32
+        user.EmailSendVerificationCodeReq:
+            type: object
+            properties:
+                email:
+                    type: string

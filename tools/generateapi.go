@@ -45,8 +45,8 @@ func getGen(engine *gin.Engine) *astra.Service {
 					// [0] is ignored
 					// [1] is the status code (int)
 					// [2] is the error (type)
+					// We only need to concern ourselves with the status code
 
-					// Create the return type for this explicit error code
 					returnType := astra.ReturnType{
 						ContentType: "text/plain",
 						StatusCode:  400,
@@ -54,6 +54,8 @@ func getGen(engine *gin.Engine) *astra.Service {
 							Type: "string",
 						},
 					}
+
+					// Create the return type for this explicit error code
 
 					// A custom utility function that prevents duplicate return types
 					route.ReturnTypes = astra.AddReturnType(route.ReturnTypes, returnType)

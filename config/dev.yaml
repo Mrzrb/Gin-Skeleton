@@ -21,3 +21,6 @@ emailNoreply:
   emailUser: "go_skeleton@163.com"
   emailPassword: "MFZNIPMCGVLAVUUE"
   emailPort: 25
+
+cache:
+  server: "localhost:6379"

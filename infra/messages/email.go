@@ -1,5 +1,7 @@
 package messages
 
+import "app/config"
+
 type EmailProvider interface {
 	Send(email Email) error
 }
@@ -11,9 +13,9 @@ type Email struct {
 	To      []string
 }
 
-func NewEmail(from, subject, body string, to []string) Email {
+func NewEmail(subject, body string, to []string) Email {
 	return Email{
-		From:    from,
+		From:    config.Conf.EmailNoreply.EmailUser,
 		To:      to,
 		Subject: subject,
 		Body:    body,

@@ -1,15 +1,19 @@
 package tests
 
 import (
+	"app/app"
+	"app/app/model/query"
 	"app/config"
 	"app/helpers"
-	"app/infra"
 	"app/wires"
 
 	"github.com/gin-gonic/gin"
 )
 
-var TestApp *infra.App
+var (
+	TestApp *app.App
+	Q       *query.Query
+)
 
 func init() {
 	config.InitConf("unit")
@@ -19,5 +23,6 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+	query.SetDefault(helpers.MysqlClients[helpers.CommonMysqlClient])
 	TestApp = app
 }

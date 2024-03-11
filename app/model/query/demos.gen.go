@@ -5,6 +5,7 @@
 package query
 
 import (
+	"app/app/model/dao"
 	"context"
 
 	"gorm.io/gorm"
@@ -15,8 +16,6 @@ import (
 	"gorm.io/gen/field"
 
 	"gorm.io/plugin/dbresolver"
-
-	"app/app/model/dao"
 )
 
 func newDemo(db *gorm.DB, opts ...gen.DOOption) demo {
@@ -27,6 +26,11 @@ func newDemo(db *gorm.DB, opts ...gen.DOOption) demo {
 
 	tableName := _demo.demoDo.TableName()
 	_demo.ALL = field.NewAsterisk(tableName)
+	_demo.Name = field.NewString(tableName, "name")
+	_demo.ID = field.NewUint(tableName, "id")
+	_demo.CreatedAt = field.NewTime(tableName, "created_at")
+	_demo.UpdatedAt = field.NewTime(tableName, "updated_at")
+	_demo.DeletedAt = field.NewField(tableName, "deleted_at")
 
 	_demo.fillFieldMap()
 
@@ -36,7 +40,12 @@ func newDemo(db *gorm.DB, opts ...gen.DOOption) demo {
 type demo struct {
 	demoDo
 
-	ALL field.Asterisk
+	ALL       field.Asterisk
+	Name      field.String
+	ID        field.Uint
+	CreatedAt field.Time
+	UpdatedAt field.Time
+	DeletedAt field.Field
 
 	fieldMap map[string]field.Expr
 }
@@ -53,6 +62,11 @@ func (d demo) As(alias string) *demo {
 
 func (d *demo) updateTableName(table string) *demo {
 	d.ALL = field.NewAsterisk(table)
+	d.Name = field.NewString(table, "name")
+	d.ID = field.NewUint(table, "id")
+	d.CreatedAt = field.NewTime(table, "created_at")
+	d.UpdatedAt = field.NewTime(table, "updated_at")
+	d.DeletedAt = field.NewField(table, "deleted_at")
 
 	d.fillFieldMap()
 
@@ -69,7 +83,12 @@ func (d *demo) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (d *demo) fillFieldMap() {
-	d.fieldMap = make(map[string]field.Expr, 0)
+	d.fieldMap = make(map[string]field.Expr, 5)
+	d.fieldMap["name"] = d.Name
+	d.fieldMap["id"] = d.ID
+	d.fieldMap["created_at"] = d.CreatedAt
+	d.fieldMap["updated_at"] = d.UpdatedAt
+	d.fieldMap["deleted_at"] = d.DeletedAt
 }
 
 func (d demo) clone(db *gorm.DB) demo {

@@ -7,18 +7,33 @@
 package wires
 
 import (
+	"app/app"
 	"app/app/controller"
+	"app/app/service/impl"
 	"app/infra"
 	"app/infra/messages"
 )
 
 // Injectors from wire.go:
 
-func InitApp() (*infra.App, error) {
+func InitApp() (*app.App, error) {
 	smtpEmail := messages.NewSmtpEmailNoreply()
-	baseCtl := &controller.BaseCtl{
+	baseCtl := controller.BaseCtl{
 		EmailSrv: smtpEmail,
 	}
-	app := infra.NewApp(baseCtl)
-	return app, nil
+	cache := infra.NewCache()
+	idGenerator := infra.NewIdGenerator()
+	userService := &impl.UserService{
+		Email: smtpEmail,
+		Cache: cache,
+		Idg:   idGenerator,
+	}
+	userCtl := controller.UserCtl{
+		UserSrv: userService,
+	}
+	appApp := &app.App{
+		BaseCtl: baseCtl,
+		UserCtl: userCtl,
+	}
+	return appApp, nil
 }
